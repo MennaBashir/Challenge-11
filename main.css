@@ -1,0 +1,137 @@
+:root{
+    --c1:#733fc8;
+    --c2:#18202d;
+    --c3:#49556b;
+    --m:#edf2f8;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.container{    
+    display: grid;
+    grid-template-areas:
+        "box1 box1 box2 box3"
+        "box4 box5 box5 box3";
+    padding: 30px;
+    gap: 20px;
+    background-color: var(--m);
+}
+.box1{
+ grid-area: box1;
+ background-color:var(--c1);
+ position: relative;
+ z-index: 1;
+}
+.box1::before{
+    content: url("images/bg-pattern-quotation.svg");
+    position: absolute;
+    top: 15px;
+    right: 60px;
+    z-index: -1;
+}
+.box1 .img img,
+.box2 .img img{
+    border: 2px solid #f5deb32e;
+}
+.box1 .txt,
+.box2 .txt,
+.box5 .txt {
+    color: white;
+}
+.box1 .txt p,
+.box2 .txt p,
+.box5 .txt p{
+    color: #f5f2eb94;
+}
+.box1 .bigTxt h1,
+.box2 .bigTxt h1,
+.box5 .bigTxt h1{
+    color: #f5f5f5f0;
+}
+.box1 .bigTxt p,
+.box2 .bigTxt p,
+.box5 .bigTxt p{
+    color: #f5f5f5bf;
+}
+.box2{
+    grid-area: box2;
+    background-color: var(--c3);
+}
+.box3{
+grid-area: box3;
+background-color: white;
+}
+.box3 .txt h2,
+.box3 .bigTxt h1,
+.box4 .txt h2,
+.box4 .bigTxt h1{
+    color: var(--c3);
+}
+.box3 .txt p,
+.box4 .txt p{
+    color: #757b87;
+}
+.box3 .bigTxt p,
+.box4 .bigTxt p{
+    color: #49556be0;
+}
+.box4{
+grid-area: box4;
+background-color: white;
+
+}
+.box5{
+grid-area: box5;
+background-color: var(--c2);
+}
+.box5 .img img{
+    border: 2px solid var(--c1);
+
+}
+.box{
+    padding: 30px;
+    border-radius: 15px;
+    height: fit-content;
+    box-shadow: 2px 3px 6px #c7b9b97a;
+}
+.box .img{
+    display: flex;
+    gap: 15px;
+}
+.box .img img{
+    border-radius: 50%;
+    width: 50px;
+}
+.box .txt {
+    margin-top: -18px;
+}
+.box .txt h2{
+    font-size: 22px;
+    margin-bottom: -10px;
+}
+.box .txt p{
+    font-size: 15px;
+}
+.box .bigTxt{
+    margin-top: -10px;
+}
+.box .bigTxt h1{
+    font-size: 24px;
+}
+.box .bigTxt p{
+    margin-top: 25px;
+    line-height: 22px;
+}
+@media (max-width:768px){
+    .container{
+        display: block;
+    }
+    .box{
+        margin-bottom: 30px
+    }
+}
